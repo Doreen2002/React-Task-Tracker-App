@@ -18,13 +18,26 @@ body, html{
 
 .button
 {
-  width: 230px;
+  width: 210px;
   background-color: rgb(215, 246, 250);
   border-radius: 10px;
   margin-left: 70%;
   height: 50px;
   font-size: 20px;
-  padding: 20px;
+  padding:0px;
   color: white;
   border: none;
+}
+
+
+.task
+{
+ background-color: rgba(240, 238, 238, 0.945);
+ margin: 30px;
+ height: 15vh;
+ border-radius: 10px;
+ text-align: center;
+ font-size: 22px;
+ padding: 10px;
+
 }

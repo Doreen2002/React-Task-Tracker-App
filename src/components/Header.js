@@ -9,7 +9,7 @@ const Header= ({title})=>
     return(
        <header className="header">
            <h1 style={headerStyle}>{title}</h1>
-           <Button color="lightgreen" text="ADD TASK"/>
+           <Button color="lightgreen" text="ADD TASK" />
        </header>
     )
 
