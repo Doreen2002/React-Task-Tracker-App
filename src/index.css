@@ -14,3 +14,17 @@ body, html{
   height: 50vh;
   width: 80%;
 }
+
+
+.button
+{
+  width: 230px;
+  background-color: rgb(215, 246, 250);
+  border-radius: 10px;
+  margin-left: 70%;
+  height: 50px;
+  font-size: 20px;
+  padding: 20px;
+  color: white;
+  border: none;
+}

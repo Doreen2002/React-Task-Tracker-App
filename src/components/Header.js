@@ -1,12 +1,15 @@
 import React  from "react";
 import reactDom from "react-dom";
 
+import Button from "./Button";
+
 const Header= ({title})=>
 {
 
     return(
-       <header>
+       <header className="header">
            <h1 style={headerStyle}>{title}</h1>
+           <Button color="lightgreen" text="ADD TASK"/>
        </header>
     )
 
@@ -14,8 +17,8 @@ const Header= ({title})=>
 
 //style for the header
 const headerStyle = {
-    backgroundColor:"red",
-    color:"white",
+   
+    color:"lightblue",
     textAlign:"center"
 
 }
@@ -23,10 +26,11 @@ const headerStyle = {
 /* this is a default prop, that has been accessed through destructing*/
 
 Header.defaultProps = {
-
+   
     title:"Task Tracker App",
 
 }
+
 
 
 
