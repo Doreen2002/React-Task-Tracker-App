@@ -5,6 +5,8 @@ import Header  from './components/Header';
 
 import Tasks  from './components/Tasks';
 
+import AddTask from "./components/AddTask";
+
 const App = () =>{
   // allows us to use this in other components
   //myTasks is the name of the state and setMyTasks is the function that will update the state
@@ -54,8 +56,9 @@ const App = () =>{
     }
 
   return (
-    <div className="App">
+    <div className="container">
     <Header/>
+    <AddTask/>
     {myTasks.length>0?<Tasks myTasks = {myTasks} onDelete = {deleteTask}  onToggle= {toggleReminder}/>:"You have no tasks"}
     </div>
   );
