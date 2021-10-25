@@ -40,11 +40,23 @@ const App = () =>{
          tasks.id !== id, 
         ))
     }
-    
+
+    //toggle reminder 
+    const toggleReminder = (id)=>
+    {
+        setMyTasks(
+          myTasks.map((task)=>
+          task.id === id ? {
+          ...task, reminder:!task.reminder
+          }:task
+          )
+        )
+    }
+
   return (
     <div className="App">
     <Header/>
-    {myTasks.length>0?<Tasks myTasks = {myTasks} onDelete = {deleteTask} />:"You have no tasks"}
+    {myTasks.length>0?<Tasks myTasks = {myTasks} onDelete = {deleteTask}  onToggle= {toggleReminder}/>:"You have no tasks"}
     </div>
   );
 }
