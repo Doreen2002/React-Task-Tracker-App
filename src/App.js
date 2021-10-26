@@ -35,6 +35,11 @@ const App = () =>{
         }
     ]
     )
+    //Add Task
+    const addTask = (task)=>
+    {
+       console.log(task);
+    }
     //delete function
     const deleteTask = (id)=>
     {
@@ -58,7 +63,7 @@ const App = () =>{
   return (
     <div className="container">
     <Header/>
-    <AddTask/>
+    <AddTask onAdd = {addTask}/>
     {myTasks.length>0?<Tasks myTasks = {myTasks} onDelete = {deleteTask}  onToggle= {toggleReminder}/>:"You have no tasks"}
     </div>
   );
