@@ -3,13 +3,13 @@ import reactDom from "react-dom";
 
 import Button from "./Button";
 
-const Header= ({title, onAdd})=>
+const Header= ({title, onAdd, showAdd })=>
 {
 
     return(
        <header className="header">
            <h1 style={headerStyle}>{title}</h1>
-           <Button color="lightgreen" text="ADD TASK" onClick = {onAdd} />
+           <Button color={showAdd?'red':'lightgreen'} text={showAdd?'CLOSE':'ADD'} onClick = {onAdd} />
        </header>
     )
 

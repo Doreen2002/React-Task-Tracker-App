@@ -64,7 +64,7 @@ const [showTasks, setShowTasks] = useState(false)
 
   return (
     <div className="container">
-    <Header onAdd = {()=>setShowTasks(!showTasks)}/>
+    <Header onAdd = {()=>setShowTasks(!showTasks)} showAdd = {showTasks}/>
    
    { showTasks && <AddTask onAdd = {addTask}/>} 
     {myTasks.length>0?<Tasks myTasks = {myTasks} onDelete = {deleteTask}  onToggle= {toggleReminder}/>:"You have no tasks"}
