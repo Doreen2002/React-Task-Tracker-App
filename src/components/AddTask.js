@@ -16,13 +16,14 @@ const AddTask = ({onAdd})=>
          {
             setInputValidation('Task or Day field cannot be empty');
          }
-         
-         
-         onAdd({text, day,reminder});
+         else
+         {
+        onAdd({text, day,reminder});
          //clears the form
          setText('');
          setDay('');
          setReminder(false);
+         }
     }
 
     return (

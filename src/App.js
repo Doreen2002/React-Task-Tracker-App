@@ -8,6 +8,7 @@ import Tasks  from './components/Tasks';
 import AddTask from "./components/AddTask";
 
 const App = () =>{
+const [showTasks, setShowTasks] = useState(false)
   // allows us to use this in other components
   //myTasks is the name of the state and setMyTasks is the function that will update the state
   const [myTasks, setMyTasks] = useState(
@@ -15,30 +16,31 @@ const App = () =>{
         {
             id:1,
             day:"monday 14:35pm",
-            text:"finish my coding task",
+            text:"Sample Task",
             reminder:true
     
         },
-        {
-            id:2,
-            day:"monday 1:35am",
-            text:"go for jogging ",
-            reminder:false
-    
-        },
-        {
-            id:3,
-            day:"monday 4:35am",
-            text:"set up breakfast ",
-            reminder:true
-    
-        }
+        
     ]
     )
     //Add Task
     const addTask = (task)=>
     {
-       console.log(task);
+       //create a rounded off  random id  to identify unique lists
+       const id = Math.floor(Math.random()* 100) + 10;
+
+       const  newTask = {id, ...task};
+
+       setMyTasks([...myTasks, newTask]);
+     
+    
+       
+
+         
+       
+       
+      
+       
     }
     //delete function
     const deleteTask = (id)=>
@@ -62,8 +64,9 @@ const App = () =>{
 
   return (
     <div className="container">
-    <Header/>
-    <AddTask onAdd = {addTask}/>
+    <Header onAdd = {()=>setMyTasks(!showTasks)}/>
+   
+   { showTasks && <AddTask onAdd = {addTask}/>} 
     {myTasks.length>0?<Tasks myTasks = {myTasks} onDelete = {deleteTask}  onToggle= {toggleReminder}/>:"You have no tasks"}
     </div>
   );
